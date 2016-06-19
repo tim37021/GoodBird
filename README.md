@@ -1,4 +1,6 @@
 # GoodBird
+![alt tag](/screenshots/1.png)
+
 A clone of angry bird game written in C++. I developed it for practicing class design. It is intented to be cross-platform game but I haven't tested it on linux because my computer was broken. Maybe need some modify to cmake script.(I hate to write cmake script...) The game logic is seperated from rendering. Therefore, it is able to port to any rendering APIs without modifying.
 ### Build
 The first two step is needed if you are not able to run Goodbird.exe
