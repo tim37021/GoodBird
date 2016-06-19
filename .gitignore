@@ -1,1 +1,4 @@
 .vscode/*
+bin/CMake*
+bin/Makefile
+bin/thirdparty
