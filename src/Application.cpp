@@ -10,8 +10,8 @@ namespace GoodBird
 	{
 		mWindow.create(sf::VideoMode(800, 600), L"GoodBird");
 		mWindow.setActive();
-    	glewExperimental = GL_TRUE;
-    	glewInit();
+		glewExperimental = GL_TRUE;
+		glewInit();
 		mWindow.setFramerateLimit(60);
 
 		mObserverSpeedX = 0;
