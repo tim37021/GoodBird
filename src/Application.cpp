@@ -55,7 +55,10 @@ namespace GoodBird
 	            		mObserverSpeedX = 100;
 	            	break;
 	            case sf::Event::KeyReleased:
-	            	mObserverSpeedX = 0;
+	            	if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && event.key.code == sf::Keyboard::Left)
+	            		mObserverSpeedX = 0;
+	            	if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && event.key.code == sf::Keyboard::Right)
+	            		mObserverSpeedX = 0;	            
 	            	break;
 	            default:;
 	        }
