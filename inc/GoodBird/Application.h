@@ -16,8 +16,9 @@ namespace GoodBird
 		sf::RenderWindow mWindow;
 		GoodBirdGame mGame;
 		Rendering::SFMLRenderer mRenderer;
-		sf::Clock mFPSClock, mGameClock;
+		sf::Clock mFPSClock, mGameClock, mObserverClock;
 		uint32_t mFPSTmp, mFPS;
+		float mObserverSpeedX, mObserverSpeedY;
 
 		void handleEvents();
 		void calculateFPS();

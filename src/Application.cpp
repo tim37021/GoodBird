@@ -13,6 +13,10 @@ namespace GoodBird
     	glewExperimental = GL_TRUE;
     	glewInit();
 		mWindow.setFramerateLimit(60);
+
+		mObserverSpeedX = 0;
+		mObserverSpeedY = 0;
+
 	}
 
 	void Application::run()
@@ -22,6 +26,9 @@ namespace GoodBird
 	        mWindow.clear();
 
 	        mGame.update(mGameClock.getElapsedTime().asSeconds());
+
+	        mGame.moveObserver(mObserverSpeedX*mGameClock.getElapsedTime().asSeconds(), mObserverSpeedY*mGameClock.getElapsedTime().asSeconds());
+	        mGameClock.restart();
 
 	        mWindow.pushGLStates();
 	       	mGame.draw(mRenderer);
@@ -41,6 +48,15 @@ namespace GoodBird
 	            case sf::Event::Closed:
 	                mWindow.close();
 	                break;
+	            case sf::Event::KeyPressed:
+	            	if(event.key.code == sf::Keyboard::Left)
+	            		mObserverSpeedX = -100;
+	            	if(event.key.code == sf::Keyboard::Right)
+	            		mObserverSpeedX = 100;
+	            	break;
+	            case sf::Event::KeyReleased:
+	            	mObserverSpeedX = 0;
+	            	break;
 	            default:;
 	        }
 	    }
