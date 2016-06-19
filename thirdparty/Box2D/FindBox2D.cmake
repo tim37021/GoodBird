@@ -1,0 +1,2 @@
+set(BOX2D_INCLUDE_DIR ${BOX2D_ROOT}/include/)
+set(BOX2D_LIBRARIES ${BOX2D_ROOT}/lib/libBox2D.a)
